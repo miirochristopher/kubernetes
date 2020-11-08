@@ -1,0 +1,27 @@
+{% set ca_certificates = salt['grains.filter_by']({
+      'Debian': {
+        'path': '/usr/local/share/ca-certificates',
+        'command' : 'update-ca-certificates --fresh'
+      },
+      'RedHat': {
+        'path': '/etc/pki/ca-trust/source/anchors',
+        'command' : 'update-ca-trust'
+      }
+    })
+%}
+{% set default_ca_host = salt["pillar.get"]("kubernetes:master:cluster:node01:hostname", salt["pillar.get"]("kubernetes:master:hostname")) %}
+{% set ca_host = salt["pillar.get"]("kubernetes:pki:host", default_ca_host) %}
+{% set pki_path = salt["pillar.get"]("kubernetes:pki:path","/opt/kubernetes/pki") %}
+{% set pki_cert = salt["pillar.get"]("kubernetes:pki:cert","kubernetes") %}
+{% set pki_ca = salt["pillar.get"]("kubernetes:pki:ca","kubernetes-ca") %}
+{% set wildcard = salt["pillar.get"]("kubernetes:pki:wildcard","*") %}
+
+# Select the m2crypt python pkg, depend of the osmalily and os version
+{% set m2crypto = salt['grains.filter_by']({
+    'Debian': 'python3-m2crypto',
+    'RedHat': salt['grains.filter_by']({
+       '8': 'python3-m2crypto',
+       '7': 'm2crypto'
+     }, grain='osmajorrelease', default='8'),
+  })
+%}

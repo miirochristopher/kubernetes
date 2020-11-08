@@ -1,0 +1,26 @@
+{0
+  "CN": "kubernetes",
+  "hosts": [
+    "10.32.0.1",
+    "kubernetes.default",
+    "kubernetes.default.svc.cluster.local",
+    "ha-kube-master.local",
+    "saltkube",
+    "192.168.50.10",
+    "${KUBERNETES_PUBLIC_ADDRESS}",
+    "127.0.0.1"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+    },
+  "names": [
+    {
+      "C": "UG",
+      "L": "Kampala",
+      "O": "Kubernetes",
+      "OU": "CA",
+      "ST": "Local"
+    }
+  ]
+}
