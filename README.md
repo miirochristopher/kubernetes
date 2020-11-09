@@ -7,7 +7,7 @@
 Let's clone the git repository on the Master node and create CA & certificates on the `k8s-certs/` directory using **`CfSSL`** tools:
 
 ```bash
-git clone https://github.com/miirochristopher/saltkube.git /srv/salt
+git clone https://github.com/miirochristopher/kubernetes.git /srv/salt
 ln -s /srv/salt/pillar /srv/pillar
 
 wget -q --show-progress --https-only --timestamping \
