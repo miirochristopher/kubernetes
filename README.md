@@ -10,10 +10,10 @@ Let's clone the git repository on the Master node and create CA & certificates o
 git clone https://github.com/miirochristopher/kubernetes.git /srv/salt
 ln -s /srv/salt/pillar /srv/pillar
 
-wget -q --show-progress --https-only --timestamping \
+wget -q --progress=bar --secure-protocol=TLSv1_2 --timestamping \
    https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 \
    https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
-
+   
 chmod +x cfssl_linux-amd64 cfssljson_linux-amd64
 sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
 sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
