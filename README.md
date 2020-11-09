@@ -1,11 +1,13 @@
-## Create A Kubernetes Cluster 
+# Create A Kubernetes Cluster Using SaltStack.
+
+<img src="/images/saltkube.png" width="500" height="400" alt="logo"/>
 
 ### Generate CA and TLS certificates using CfSSL
 
 Let's clone the git repository on the Master node and create CA & certificates on the `k8s-certs/` directory using **`CfSSL`** tools:
 
 ```bash
-git clone https://github.com/miirochristopher/saltkube.git
+git clone https://github.com/miirochristopher/saltkube.git /srv/salt
 ln -s /srv/salt/pillar /srv/pillar
 
 wget -q --show-progress --https-only --timestamping \
