@@ -1,6 +1,6 @@
 # Create A Kubernetes Cluster Using SaltStack.
 
-<img src="/images/saltkube.png" width="500" height="400" alt="logo"/>
+<img src="/images/saltkube.png" width="460" height="125" alt="logo"/>
 
 ### Generate CA and TLS certificates using CfSSL
 
