@@ -1,4 +1,4 @@
-# Kubernetes Cluster ⏻ powerd by k0s on LXD containers
+# Kubernetes Cluster ⏻ powered by k0s on LXD containers
 
 <!-- Start Overview -->
 ## Overview
@@ -35,8 +35,6 @@ k0s is distributed as a single binary with zero host OS dependencies besides the
 ## Multi-node Installation using k0sctl
 
 k0sctl is a command-line tool for bootstrapping and managing k0s clusters. k0sctl connects to the provided hosts using SSH and gathers information on the hosts, with which it forms a cluster by configuring the hosts, deploying k0s, and then connecting the k0s nodes together.
-
-![k0sctl deployment](img/k0sctl_deployment.png)
 
 With k0sctl, you can create multi-node clusters in a manner that is automatic and easily repeatable. This method is recommended for production cluster installation.
 
