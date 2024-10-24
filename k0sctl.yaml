@@ -1,0 +1,24 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-cluster
+spec:
+  hosts:
+  - ssh:
+      address: 10.112.4.131 # replace with the controller's IP address
+      user: root
+      port: 22
+      keyPath: ~/.ssh/k8s_rsa.pub # replace with the path to your ssh public key
+    role: controller
+  - ssh:
+      address: 10.112.4.137 # replace with the worker1's IP address
+      user: root
+      port: 22
+      keyPath: ~/.ssh/k8s_rsa.pub # replace with the path to your ssh public key
+    role: worker
+  - ssh:
+      address: 10.112.4.236 # replace with the worker2's IP address
+      user: root
+      port: 22
+      keyPath: ~/.ssh/k8s_rsa.pub # replace with the path to your ssh public key
+    role: worker  
